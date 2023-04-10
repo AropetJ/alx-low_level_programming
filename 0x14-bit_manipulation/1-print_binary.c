@@ -13,11 +13,13 @@ void print_binary(unsigned long int n)
 {
 	int i;
 
-	i = 0;
+	i = (sizeof(unsigned int) * 8) - 1;
 
-	for (i = (sizeof(int) * 8) - 1; i >= 0; i--)
+	while (i > 0 && !(n & (1u << i)))
+		i--;
+
+	for (;i >= 0; i--)
 	{
 		_putchar(n & (1u << i) ? '1' : '0');
 	}
-	_putchar('\n');
 }
