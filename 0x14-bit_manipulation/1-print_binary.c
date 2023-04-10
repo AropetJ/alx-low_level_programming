@@ -13,14 +13,22 @@ void print_binary(unsigned long int n)
 {
 	int j;
 	int i;
+	unsigned long int x;
 
-	i = 0;
+	i = 63;
 	j = 0;
 
-	for (i = 63; i >= 0; i--)
+	for (; i >= 0; i--)
 	{
-		_putchar(n & (1u << i) ? '1' : '0');
-		j++;
+		x = n >> i;
+		
+		if (x & 1)
+		{
+			_putchar('1');
+			j++;
+		}
+		else if (j)
+			_putchar('0');
 	}
 	if (!j)
 		_putchar('0');
