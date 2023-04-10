@@ -11,15 +11,26 @@
 
 void print_binary(unsigned long int n)
 {
+	int j;
 	int i;
 
-	i = (sizeof(unsigned int) * 8) - 1;
+	i = 0;
+	j = 0;
 
-	while (i > 0 && !(n & (1u << i)))
-		i--;
+	unsigned long int x;
 
-	for (;i >= 0; i--)
+	for (i = (sizeof(int) * 8) - 1; i >= 0; i--)
 	{
-		_putchar(n & (1u << i) ? '1' : '0');
+		x = n >> i;
+
+		if (x & 1)
+		{
+			_putchar('1');
+			j++;
+		}
+		else if (j)
+			_putchar('0');
 	}
+	if (!j)
+		_putchar('0');
 }
