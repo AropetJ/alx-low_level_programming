@@ -13,11 +13,10 @@ void print_binary(unsigned long int n)
 {
 	int j;
 	int i;
+	unsigned long int x;
 
 	i = 0;
 	j = 0;
-
-	unsigned long int x;
 
 	for (i = (sizeof(int) * 8) - 1; i >= 0; i--)
 	{
