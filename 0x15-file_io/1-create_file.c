@@ -13,9 +13,9 @@ int create_file(const char *filename, char *text_content)
 {
 	int i, wr, fd;
 
-	len = 0;
-	wr = 0;
 	i = 0;
+	wr = 0;
+	fd = 0;
 
 	if (filename == NULL)
 	{
