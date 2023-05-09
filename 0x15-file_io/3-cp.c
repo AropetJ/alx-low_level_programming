@@ -1,5 +1,7 @@
 #include "main.h"
 
+
+
 /**
  * main - a program that copies the content of a file to another file.
  *
@@ -21,7 +23,7 @@ int main(int ac, char **av)
 	}
 	buff = make_buff(av[2]);
 	a = open(av[1], O_RDONLY);
-	wr = read(a, buff, 1024);
+	rd = read(a, buff, 1024);
 	b = open(av[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	do {
 		if (a == -1 || rd == -1)
