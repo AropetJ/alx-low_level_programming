@@ -19,7 +19,6 @@ int main(int ac, char **av)
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
-
 	buff = make_buff(av[2]);
 	a = open(av[1], O_RDONLY);
 	wr = read(a, buff, 1024);
@@ -27,17 +26,14 @@ int main(int ac, char **av)
 	do {
 		if (a == -1 || rd == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't read from file %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			free(buff);
 			exit(98);
 		}
-
 		wr = write(b, buff, rd);
 		if (b == -1 || wr == -1)
 		{
-			dprintf(STDERR_FILENO,
-					"Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			free(buff);
 			exit(99);
 		}
@@ -47,8 +43,8 @@ int main(int ac, char **av)
 	while (rd > 0)
 		;
 	free(buff);
-	close_fd(b);
 	close_fd(a);
+	close_fd(b);
 
 	return (0);
 }
