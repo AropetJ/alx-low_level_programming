@@ -1,1 +1,1 @@
-0x17-doubly_linked_lists project solutions
+0x17-doubly linked lists project solutions
