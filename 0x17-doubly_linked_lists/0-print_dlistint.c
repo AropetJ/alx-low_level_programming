@@ -2,14 +2,16 @@
 
 /**
  * print_dlistint - prints all elements ofa linked list
+ *
  * @h: head of the list
+ *
  * Return: number of nodes
  **/
 
 size_t print_dlistint(const dlistint_t *h)
 {
-	size_t n = 0;
 	const dlistint_t *temp = h;
+	size_t i = 0;
 
 	if (h == NULL)
 	{
@@ -17,9 +19,9 @@ size_t print_dlistint(const dlistint_t *h)
 	}
 	while (temp)
 	{
-		printf("%d\n", temp->n);
-		n++;
+		printf("%d\n", temp->i);
+		i++;
 		temp = temp->next;
 	}
-	return (n);
+	return (i);
 }
