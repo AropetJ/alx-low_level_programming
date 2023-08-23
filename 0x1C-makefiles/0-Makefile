@@ -1,0 +1,4 @@
+CFLAGS=-Wall -Wextra -Werror -g
+
+clean:
+	gcc main.c school.c -o school
